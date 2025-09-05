@@ -1,9 +1,14 @@
+import math
 class Triangle:
 
     def classify_Triangle(a,b,c):
         out = ""
-        if(a*a + b*b == c*c or a*a+c*c == b*b or b*b+c*c == a*a):
-            out +="right"
+        if (
+            math.isclose(a*a + b*b, c*c) or 
+            math.isclose(a*a + c*c, b*b) or 
+            math.isclose(b*b + c*c, a*a)
+            ):
+            out+="right"
         else:
             out+="not right"
         if(a == b and a == c):

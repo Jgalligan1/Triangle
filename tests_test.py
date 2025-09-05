@@ -1,5 +1,6 @@
 import unittest
 import triangle
+import math
 
 class TriangleTest(unittest.TestCase):
     def test_Equilateral(self):
@@ -17,7 +18,8 @@ class TriangleTest(unittest.TestCase):
     def test_Right(self):
         self.assertEqual(triangle.Triangle.classify_Triangle(5,12,13),"right Scalene")
         self.assertEqual(triangle.Triangle.classify_Triangle(3,5,4),"right Scalene")
-        self.assertEqual(triangle.Triangle.classify_Triangle(20,13,43),"not right Scalene")
+        self.assertEqual(triangle.Triangle.classify_Triangle(1,1,math.sqrt(2)),"right Isosceles")
+        self.assertEqual(triangle.Triangle.classify_Triangle(3,3,math.sqrt(2)*3),"right Isosceles")
 
 
 
