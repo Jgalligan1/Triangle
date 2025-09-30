@@ -1,22 +1,24 @@
+"""Module for classifying triangles."""
 import math
 class Triangle:
-
-    def classify_Triangle(a,b,c):
+    """A class for classifying triangles by their side lengths."""
+    @staticmethod
+    def classify_triangle(a,b,c):
+        """Classify a triangle given three side lengths."""
         out = ""
         if (
-            math.isclose(a*a + b*b, c*c) or 
-            math.isclose(a*a + c*c, b*b) or 
-            math.isclose(b*b + c*c, a*a)
+            math.isclose(a * a + b * b, c*c) or
+            math.isclose(a * a + c * c, b*b) or
+            math.isclose(b * b + c * c, a *a )
             ):
-            out+="right"
+            out += "right"
         else:
-            out+="not right"
+            out += "not right"
         if(a == b and a == c):
-            out +=" Equilateral"
+            out += " Equilateral"
             return out
-        elif(a == b or a == c or b == c):
-            out +=" Isosceles"
+        if(a == b or a == c or b == c):
+            out += " Isosceles"
             return out
-        else:
-            out+=" Scalene"
-            return out
+        out += " Scalene"
+        return out
